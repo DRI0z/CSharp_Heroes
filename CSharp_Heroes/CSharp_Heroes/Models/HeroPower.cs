@@ -4,9 +4,9 @@
     {
         public int Id { get; set; }
         public int HeroId { get; set; }
-        public Hero Hero { get; set; }
+        public Hero? Hero { get; set; }
 
         public int PowerId { get; set; }
-        public Power Power { get; set; }
+        public Power? Power { get; set; }
     }
 }

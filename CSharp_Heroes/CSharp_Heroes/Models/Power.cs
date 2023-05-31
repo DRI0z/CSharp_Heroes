@@ -5,7 +5,7 @@
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public IList<HeroPower> Heroes { get; set; }
+        public IList<HeroPower>? Heroes { get; set; }
 
     }
 }

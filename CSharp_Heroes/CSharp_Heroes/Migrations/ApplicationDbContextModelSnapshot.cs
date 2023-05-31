@@ -40,7 +40,7 @@ namespace CSharp_Heroes.Migrations
 
                     b.HasIndex("SchoolId");
 
-                    b.ToTable("Heroes", (string)null);
+                    b.ToTable("Heroes");
                 });
 
             modelBuilder.Entity("CSharp_Heroes.Models.HeroPower", b =>
@@ -58,7 +58,7 @@ namespace CSharp_Heroes.Migrations
 
                     b.HasIndex("PowerId");
 
-                    b.ToTable("HeroPowers", (string)null);
+                    b.ToTable("HeroPowers");
                 });
 
             modelBuilder.Entity("CSharp_Heroes.Models.Power", b =>
@@ -75,7 +75,7 @@ namespace CSharp_Heroes.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Powers", (string)null);
+                    b.ToTable("Powers");
                 });
 
             modelBuilder.Entity("CSharp_Heroes.Models.School", b =>
@@ -92,7 +92,7 @@ namespace CSharp_Heroes.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Schools", (string)null);
+                    b.ToTable("Schools");
                 });
 
             modelBuilder.Entity("CSharp_Heroes.Models.Hero", b =>
@@ -109,7 +109,7 @@ namespace CSharp_Heroes.Migrations
             modelBuilder.Entity("CSharp_Heroes.Models.HeroPower", b =>
                 {
                     b.HasOne("CSharp_Heroes.Models.Hero", "Hero")
-                        .WithMany("Power")
+                        .WithMany("Powers")
                         .HasForeignKey("HeroId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -127,7 +127,7 @@ namespace CSharp_Heroes.Migrations
 
             modelBuilder.Entity("CSharp_Heroes.Models.Hero", b =>
                 {
-                    b.Navigation("Power");
+                    b.Navigation("Powers");
                 });
 
             modelBuilder.Entity("CSharp_Heroes.Models.Power", b =>

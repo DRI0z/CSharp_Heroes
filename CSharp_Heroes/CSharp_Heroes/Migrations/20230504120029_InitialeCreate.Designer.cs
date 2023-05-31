@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSharp_Heroes.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230504090311_InitialeCreate")]
+    [Migration("20230504120029_InitialeCreate")]
     partial class InitialeCreate
     {
         /// <inheritdoc />
@@ -112,7 +112,7 @@ namespace CSharp_Heroes.Migrations
             modelBuilder.Entity("CSharp_Heroes.Models.HeroPower", b =>
                 {
                     b.HasOne("CSharp_Heroes.Models.Hero", "Hero")
-                        .WithMany("Power")
+                        .WithMany("Powers")
                         .HasForeignKey("HeroId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -130,7 +130,7 @@ namespace CSharp_Heroes.Migrations
 
             modelBuilder.Entity("CSharp_Heroes.Models.Hero", b =>
                 {
-                    b.Navigation("Power");
+                    b.Navigation("Powers");
                 });
 
             modelBuilder.Entity("CSharp_Heroes.Models.Power", b =>
